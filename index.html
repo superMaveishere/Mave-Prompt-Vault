@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080709"><meta name="description" content="Mave Vault — premium AI prompt library">
+<title>Mave Vault</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header class="top"><button id="menu" class="icon">☰</button><button id="brand" class="brand"><b>M</b><span>Mave<br><small>Vault</small></span></button><button id="profile" class="profile"><i id="avatar">G</i><span id="name">Guest<small>USER</small></span></button></header>
+<div id="shade" class="shade"></div>
+<aside id="drawer"><div class="drawerhead"><div><small>LIBRARY</small><h2>Mave Vault</h2></div><button id="close" class="icon">×</button></div>
+<nav id="nav">
+<button data-page="dashboard">⌂ <span>Dashboard</span></button><button data-page="vault">◈ <span>Vault</span></button>
+<button data-page="featured">✦ <span>Featured</span></button><button data-page="my">▣ <span>My Prompts</span></button>
+<button data-page="updates">◷ <span>Updates / Berita</span></button><button data-page="feedback">⌁ <span>Kritik & Saran</span></button>
+<button data-page="profile">○ <span>Profile</span></button><button data-page="owner" id="ownerNav" class="hidden">◆ <span>Owner Panel</span></button>
+<button data-page="login">⇥ <span>Login / Ganti Akun</span></button><button id="logout">⇤ <span>Logout</span></button></nav>
+<div class="drawerfoot">● <span id="mode">Demo mode</span></div></aside>
+<main id="main"></main><div id="toast"></div>
+<div id="modalBg" class="modalbg"><section id="modal" class="modal"><button id="modalClose" class="modalclose">×</button><div id="modalBody"></div></section></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="js/data.js"></script><script src="js/app.js"></script></body></html>

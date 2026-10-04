@@ -1,0 +1,4 @@
+import {createClient} from 'https://esm.sh/@supabase/supabase-js@2';
+export const cors={"Access-Control-Allow-Origin":"*","Access-Control-Allow-Headers":"authorization, x-client-info, apikey, content-type"};
+export const json=(body:any,status=200)=>new Response(JSON.stringify(body),{status,headers:{...cors,'Content-Type':'application/json'}});
+export async function requireOwner(req:Request){const auth=req.headers.get('Authorization')||'';if(!auth.startsWith('Bearer '))throw new Error('Missing authorization');const token=auth.slice(7);const admin=createClient(Deno.env.get('SUPABASE_URL')!,Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!);const {data:{user},error}=await admin.auth.getUser(token);if(error||!user)throw new Error('Invalid session');const {data:profile}=await admin.from('profiles').select('rank').eq('id',user.id).single();if(profile?.rank!=='OWNER')throw new Error('Owner only');return {admin,user};}

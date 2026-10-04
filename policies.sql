@@ -1,0 +1,3 @@
+-- schema.sql sudah berisi seluruh RLS policy dan Storage policy.
+-- File ini sengaja menjadi catatan deployment agar tidak terjadi duplikasi policy.
+-- Jalankan supabase/schema.sql sebagai script utama.
